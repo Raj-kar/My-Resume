@@ -62,5 +62,5 @@ def other_route(route):
 
 if __name__ == "__main__":
     # TODO - change debug to false before push
-    # app.run(debug=True)
-    app.run()
+    app.run(debug=True)
+    # app.run()
