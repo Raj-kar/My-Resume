@@ -84,6 +84,7 @@ html {
   scroll-behavior: smooth; }
 
 .site-title {
+  color: var(--on-background-alt);
   font-size: 1.25rem;
   line-height: 2.5rem; }
 
@@ -237,4 +238,22 @@ input:checked + .slider::before {
   font-size: 20px;
   margin-top: 5px;
   margin-right: 5px;
+}
+
+/* Dark - Light Button CSS */
+#neon-btn {
+  position: absolute;
+}
+
+.neon-border {
+  border: 3px solid rgb(0, 40, 70);
+  cursor: pointer;
+}
+
+.neon-border:hover {
+  animation: border-flicker 2s linear forwards;
+}
+
+.neon-border:hover .first {
+  animation: letter-flicker 3s linear infinite;
 }
