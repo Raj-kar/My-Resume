@@ -55,6 +55,11 @@ def create_cv():
     return render_template("create_cv.html", form=new_from)
 
 
+#  Service worker route
+@app.route('/service-worker.js')
+def sw():
+    return app.send_static_file('service-worker.js'), 200, {'Content-Type': 'text/javascript'}
+
 @app.route('/<route>')
 def other_route(route):
     return render_template("error_404.html", title=route)

@@ -1,0 +1,26 @@
+{
+  "name": "Raj's Resume",
+  "short_name": "Resume",
+  "theme_color": "#98ddca",
+  "background_color": "#d8e3e7",
+  "icons": [
+    {
+        "src": "/static/icons/icon_1.png",
+        "type": "image/png",
+        "sizes": "150x150"
+      },
+      {
+        "src": "/static/icons/icon_2.png",
+        "type": "image/png",
+        "sizes": "96x96"
+      },
+      {
+        "src": "/static/icons/icon_3.png",
+        "type": "image/png",
+        "sizes": "96x96"
+      }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
