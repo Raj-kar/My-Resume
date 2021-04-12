@@ -20,6 +20,7 @@ function switchTheme(event) {
     document.getElementById("btn-light").style.position = "absolute";
     document.getElementById("neon-btn").style.visibility = "visible";
     document.getElementsByClassName("col")[0].style.marginTop = "5rem";
+    localStorage.setItem('theme', 'dark');
   } else {
     document.documentElement.setAttribute('data-theme', 'light');
     document.getElementById("avatar").classList.remove("avatar_dark");
@@ -29,11 +30,28 @@ function switchTheme(event) {
     document.getElementById("btn-light").style.position = "";
     document.getElementById("btn-light").style.visibility = "visible";
     document.getElementsByClassName("col")[0].style.marginTop = "0";
+    localStorage.setItem('theme', 'light');
   }
 }
 
 // Event Lisetner
 toggleSwitch.addEventListener('change', switchTheme);
+
+
+// Check local Storage for theme
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme) {
+  document.documentElement.setAttribute('data-theme', currentTheme);
+
+  if (currentTheme == "dark") {
+    toggleSwitch.checked = true;
+    document.getElementById("btn-light").style.visibility = "hidden";
+    document.getElementById("btn-light").style.position = "absolute";
+    document.getElementById("neon-btn").style.visibility = "visible";
+    document.getElementById("neon-btn").style.position = "inherit";
+  }
+}
+
 
 // Render Dynamic Copyight year
 const monthNames = ["January", "February", "March", "April", "May", "June",
