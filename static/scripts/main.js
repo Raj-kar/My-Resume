@@ -34,3 +34,29 @@ function switchTheme(event) {
 
 // Event Lisetner
 toggleSwitch.addEventListener('change', switchTheme);
+
+// Render Dynamic Copyight year
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+var date = new Date();
+var full_year = date.getFullYear();
+var month_name = monthNames[date.getMonth()]
+document.getElementById("copyright").innerHTML = `&copy; ${full_year} Raj's Resume. <br>All rights reserved.`
+document.getElementById("contribute-form").innerHTML = `Jun, 2020 - ${month_name}, ${full_year}`
+
+// Update Current Age
+let birth_year = 2001
+let birth_month = 6
+let current_year = date.getFullYear();
+let current_month = date.getMonth();
+
+let admin_age = current_year - birth_year
+if (birth_month > current_month) {
+  admin_age -= 1;
+}
+
+age_tags = document.getElementsByClassName("admin-age");
+for (let i = 0; i < age_tags.length; i++) {
+  age_tags[i].innerHTML = admin_age;
+}
